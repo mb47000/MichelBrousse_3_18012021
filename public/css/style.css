@@ -11,4 +11,11 @@ html {
 body {
   box-sizing: border-box; }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem; }
+
+.menu h1 {
+  font-family: 'Shrikhand', cursive; }
+
 /*# sourceMappingURL=style.css.map */
