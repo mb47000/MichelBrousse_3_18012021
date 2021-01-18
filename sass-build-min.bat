@@ -1,0 +1,1 @@
+sass sass/main.scss:public/css/style.min.css --sourcemap=none --style compressed
