@@ -18,4 +18,61 @@ body {
 .menu h1 {
   font-family: 'Shrikhand', cursive; }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 0 12px 0;
+  box-shadow: 0px 2px 13px 0px rgba(110, 110, 110, 0.5);
+  margin-bottom: 5px; }
+  header img {
+    height: 28.5px; }
+
+.search {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .search h1 {
+    text-align: center;
+    padding: 38px 60px 10px 45px; }
+  .search p {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    padding-left: 7px; }
+  .search .search__input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+    padding: 13px 0 12px 0; }
+    .search .search__input i {
+      margin-left: 80px;
+      margin-bottom: 5px; }
+    .search .search__input input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-left: 15px; }
+  .search .search__button {
+    color: white;
+    cursor: pointer;
+    border: none;
+    height: 50px;
+    width: 220px;
+    margin-top: 30px;
+    margin-bottom: 56px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 25px;
+    background: linear-gradient(175deg, #FF79DA 0%, #9356DC 95%);
+    box-shadow: 0px 4px 7px 0px rgba(110, 110, 110, 0.4); }
+    .search .search__button:focus {
+      outline: none; }
+
 /*# sourceMappingURL=style.css.map */
