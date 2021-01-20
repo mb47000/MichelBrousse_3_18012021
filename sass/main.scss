@@ -6,8 +6,17 @@
 @import "./base/base";
 @import "./base/typography";
 
+@import "./components/button";
+@import "./components/restaurant-header";
+@import "./components/dishe-card";
+
 @import "./layout/header";
+@import "./layout/search";
+@import "./layout/working";
+@import "./layout/menu";
+@import "./layout/restaurants";
 @import "./layout/footer";
 
 @import "./pages/index";
+@import "./pages/res-menu";
 

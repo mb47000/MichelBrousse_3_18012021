@@ -1,10 +1,14 @@
-header{
+.header {
     @include flex-center;
     padding: 22px 0 12px 0;
-    box-shadow: 0px 2px 13px 0px rgba(110, 110, 110, 0.5);
-    margin-bottom: 5px;
-    
-    img {
+
+    &__logo {
         height: 28.5px;
+    }
+
+    &__nav {
+        position: absolute;
+        left: 23px;
+        font-size: 1.8rem;
     }
 }

@@ -1,0 +1,8 @@
+.restaurant-header {
+    display: flex;
+    justify-content: space-between;
+    &__name {
+      padding-left: 5px;
+      margin-bottom: 30px;
+    }
+  }
