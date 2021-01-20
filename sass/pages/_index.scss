@@ -19,4 +19,11 @@
       margin-bottom: 0;
     }
   }
+
+  @include tablet {
+    main {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
 }
