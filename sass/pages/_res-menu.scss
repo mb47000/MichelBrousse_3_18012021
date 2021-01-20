@@ -1,0 +1,32 @@
+.res-menu {
+  .background-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: -1;
+  }
+
+  .container {
+    padding: 0 14px;
+    padding-top: 30px;
+    margin-top: -34px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: $color-section-background;
+  }
+
+  .order-confirm {
+    @include flex-center;
+    &__button {
+      width: 188px;
+      margin-top: 20px;
+      margin-bottom: 53px;
+    }
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+}

@@ -19,43 +19,82 @@ ul {
   list-style: none; }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem; }
 
-footer h2 {
-  font-family: 'Shrikhand', cursive;
-  font-size: 1.8rem;
-  font-weight: normal; }
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+  font-size: 2.8rem; }
 
-.menu h1 {
-  font-family: 'Shrikhand', cursive; }
+h2 {
+  font-size: 1.6rem;
+  font-weight: 400; }
 
-header {
+h3 {
+  font-size: 1.8rem; }
+
+button {
+  color: white;
+  cursor: pointer;
+  border: none;
+  height: 50px;
+  width: 220px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 25px;
+  background: linear-gradient(175deg, #FF79DA 0%, #9356DC 95%);
+  box-shadow: 0px 4px 7px 0px rgba(110, 110, 110, 0.4); }
+  button:focus {
+    outline: none; }
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between; }
+  .restaurant-header__name {
+    padding-left: 5px;
+    margin-bottom: 30px; }
+
+.dishe-card {
+  box-shadow: 0px 3px 10px -1px rgba(110, 110, 110, 0.3);
+  margin-bottom: 14px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px 9px 11px; }
+  .dishe-card__infos {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 10px;
+    line-height: 1.4; }
+    .dishe-card__infos__name {
+      font-size: 18px;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      display: inline; }
+    .dishe-card__infos__details {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      display: inline; }
+  .dishe-card__price {
+    display: flex;
+    align-items: flex-end;
+    padding-right: 5px;
+    font-weight: 600;
+    font-size: 1.5rem; }
+
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 22px 0 12px 0;
-  box-shadow: 0px 2px 13px 0px rgba(110, 110, 110, 0.5);
-  margin-bottom: 5px; }
-  header img {
+  padding: 22px 0 12px 0; }
+  .header__logo {
     height: 28.5px; }
-
-footer {
-  margin-top: 65px;
-  background-color: #353535;
-  color: white;
-  padding: 23px 25px 30px 25px; }
-  footer ul {
-    padding-top: 12px;
-    font-size: 1.6rem;
-    line-height: 1.7; }
-    footer ul a {
-      color: white; }
-      footer ul a i {
-        width: 17px;
-        margin-right: 5px; }
-        footer ul a i::before {
-          font-size: 1.2rem; }
+  .header__nav {
+    position: absolute;
+    left: 23px;
+    font-size: 1.8rem; }
 
 .search {
   background-color: #f6f6f6;
@@ -63,56 +102,44 @@ footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
-  .search h1 {
+  .search__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 600;
     text-align: center;
     padding: 38px 60px 10px 45px; }
-  .search p {
+  .search__text {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 300;
     padding-left: 7px; }
-  .search .search__input {
+  .search__input {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #eaeaea;
     padding: 13px 0 12px 0; }
-    .search .search__input i {
+    .search__input i {
       margin-left: 80px;
       margin-bottom: 5px; }
-    .search .search__input input {
+    .search__input input {
       background-color: transparent;
       border: none;
       outline: none;
       font-size: 1.6rem;
       font-weight: 600;
       margin-left: 15px; }
-  .search .search__button {
-    color: white;
-    cursor: pointer;
-    border: none;
-    height: 50px;
-    width: 220px;
-    font-size: 1.6rem;
-    font-weight: 500;
-    border-radius: 25px;
-    background: linear-gradient(175deg, #FF79DA 0%, #9356DC 95%);
-    box-shadow: 0px 4px 7px 0px rgba(110, 110, 110, 0.4);
+  .search__validation {
     margin-top: 30px;
     margin-bottom: 56px; }
-    .search .search__button:focus {
-      outline: none; }
 
 .working {
   padding: 47px 20px 0 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end; }
-  .working h2 {
-    width: 100%;
-    margin-bottom: 30px; }
-  .working .working__step {
+  .working__card {
     display: flex;
     align-items: center;
     background-color: #f6f6f6;
@@ -121,7 +148,7 @@ footer {
     margin-bottom: 2.3rem;
     border-radius: 18px;
     box-shadow: 0px 3px 10px -1px rgba(110, 110, 110, 0.3); }
-    .working .working__step span {
+    .working__card span {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -132,22 +159,36 @@ footer {
       background-color: #9356DC;
       color: white;
       margin-left: -11.5px; }
-    .working .working__step i {
+    .working__card i {
       font-size: 1.8rem;
       color: #7E7E7E;
-      margin: 0 20px 0 20px; }
-    .working .working__step p {
+      margin: 0 20px 0 20px;
+      padding-left: 11.5px; }
+    .working__card p {
       font-weight: 600; }
-    .working .working__step--active {
+    .working__card--active {
       background-color: #F5EDFF; }
-      .working .working__step--active i {
+      .working__card--active i {
         color: #9356DC; }
+
+.menu-layout {
+  margin-bottom: 36px; }
+  .menu-layout .menu-layout__title {
+    padding-left: 5px;
+    position: relative;
+    margin-bottom: 23px; }
+    .menu-layout .menu-layout__title::before {
+      content: "";
+      border-bottom: 3px solid #99E2d0;
+      position: absolute;
+      top: 25px;
+      width: 40px; }
 
 .restaurants {
   background-color: #f6f6f6;
   margin-top: 51px;
   padding: 53px 20px 0 20px; }
-  .restaurants h2 {
+  .restaurants .restaurants__title {
     margin-bottom: 22px; }
   .restaurants .restaurants__card {
     border-radius: 15px;
@@ -165,5 +206,64 @@ footer {
       justify-content: space-between;
       padding: 11px 20px 14px 13px;
       line-height: 1.4; }
+
+.footer {
+  margin-top: 65px;
+  background-color: #353535;
+  color: white;
+  padding: 23px 25px 30px 25px; }
+  .footer__title {
+    font-family: "Shrikhand", cursive;
+    font-size: 1.8rem;
+    font-weight: normal; }
+  .footer__nav {
+    padding-top: 12px;
+    font-size: 1.6rem;
+    line-height: 1.7; }
+    .footer__nav a {
+      color: white; }
+      .footer__nav a i {
+        width: 17px;
+        margin-right: 5px; }
+        .footer__nav a i::before {
+          font-size: 1.2rem; }
+
+.home h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 27px; }
+.home .header {
+  box-shadow: 0px 2px 13px 0px rgba(110, 110, 110, 0.5);
+  margin-bottom: 5px; }
+.home .footer__title {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-bottom: 0; }
+
+.res-menu .background-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: -1; }
+.res-menu .container {
+  padding: 0 14px;
+  padding-top: 30px;
+  margin-top: -34px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  background-color: #f6f6f6; }
+.res-menu .order-confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .res-menu .order-confirm__button {
+    width: 188px;
+    margin-top: 20px;
+    margin-bottom: 53px; }
+.res-menu .footer {
+  margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */

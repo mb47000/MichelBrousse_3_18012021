@@ -1,0 +1,44 @@
+.search {
+    background-color: $color-section-background;
+    @include flex-center;
+    flex-wrap: wrap;
+    
+    &__title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.4rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 38px 60px 10px 45px;
+      }
+
+    &__text {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding-left: 7px;
+    }
+  
+    &__input {
+      width: 100%;
+      @include flex-center;
+      background-color: $color-component-background;
+      padding: 13px 0 12px 0;
+      i {
+        margin-left: 80px;
+        margin-bottom: 5px;
+      }
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-left: 15px;
+      }
+    }
+  
+    &__validation {
+      margin-top: 30px;
+      margin-bottom: 56px;
+    }
+  }
