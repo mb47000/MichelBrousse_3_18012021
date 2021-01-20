@@ -24,5 +24,16 @@
         }
       }
     }
+
+    @include tablet {
+      @include flex-center;
+      flex-direction: column;
+    }
+  }
+
+  @include tablet {
+    margin-top: 0;
+    @include flex-center;
+    flex-direction: column;
   }
 }

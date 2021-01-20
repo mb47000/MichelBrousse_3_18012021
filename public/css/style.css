@@ -54,6 +54,16 @@ button {
   .restaurant-header__name {
     padding-left: 5px;
     margin-bottom: 30px; }
+    @media screen and (min-width: 768px) {
+      .restaurant-header__name {
+        margin-bottom: 0; } }
+  @media screen and (min-width: 768px) {
+    .restaurant-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px; } }
 
 .dishe-card {
   box-shadow: 0px 3px 10px -1px rgba(110, 110, 110, 0.3);
@@ -103,7 +113,7 @@ button {
   align-items: center;
   flex-wrap: wrap; }
   .search__title {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 2.4rem;
     font-weight: 600;
     text-align: center;
@@ -113,6 +123,9 @@ button {
     font-size: 1.8rem;
     font-weight: 300;
     padding-left: 7px; }
+    @media screen and (min-width: 768px) {
+      .search__text {
+        padding: 0 15px; } }
   .search__input {
     width: 100%;
     display: flex;
@@ -133,12 +146,19 @@ button {
   .search__validation {
     margin-top: 30px;
     margin-bottom: 56px; }
+  @media screen and (min-width: 768px) {
+    .search {
+      width: 50%;
+      align-items: baseline; } }
 
 .working {
   padding: 47px 20px 0 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end; }
+  @media screen and (min-width: 768px) {
+    .working__title {
+      text-align: center; } }
   .working__card {
     display: flex;
     align-items: center;
@@ -170,6 +190,9 @@ button {
       background-color: #F5EDFF; }
       .working__card--active i {
         color: #9356DC; }
+  @media screen and (min-width: 768px) {
+    .working {
+      width: 50%; } }
 
 .menu-layout {
   margin-bottom: 36px; }
@@ -183,6 +206,12 @@ button {
       position: absolute;
       top: 25px;
       width: 40px; }
+  @media screen and (min-width: 768px) {
+    .menu-layout {
+      width: 48%; } }
+  @media screen and (min-width: 992px) {
+    .menu-layout {
+      width: 30%; } }
 
 .restaurants {
   background-color: #f6f6f6;
@@ -190,6 +219,9 @@ button {
   padding: 53px 20px 0 20px; }
   .restaurants .restaurants__title {
     margin-bottom: 22px; }
+    @media screen and (min-width: 768px) {
+      .restaurants .restaurants__title {
+        text-align: center; } }
   .restaurants .restaurants__card {
     border-radius: 15px;
     box-shadow: 0px 3px 10px -1px rgba(110, 110, 110, 0.3);
@@ -206,6 +238,22 @@ button {
       justify-content: space-between;
       padding: 11px 20px 14px 13px;
       line-height: 1.4; }
+    @media screen and (min-width: 768px) {
+      .restaurants .restaurants__card {
+        width: 48.5%;
+        margin-bottom: 25px; } }
+    @media screen and (min-width: 992px) {
+      .restaurants .restaurants__card {
+        width: 31.5%; } }
+  @media screen and (min-width: 768px) {
+    .restaurants {
+      margin-top: 0;
+      padding-top: 20px;
+      border-top: 2px solid #eaeaea; }
+      .restaurants > div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between; } }
 
 .footer {
   margin-top: 65px;
@@ -227,6 +275,19 @@ button {
         margin-right: 5px; }
         .footer__nav a i::before {
           font-size: 1.2rem; }
+    @media screen and (min-width: 768px) {
+      .footer__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; } }
+  @media screen and (min-width: 768px) {
+    .footer {
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; } }
 
 .home h2 {
   font-size: 2.4rem;
@@ -240,6 +301,10 @@ button {
   font-size: 1.8rem;
   font-weight: normal;
   margin-bottom: 0; }
+@media screen and (min-width: 768px) {
+  .home main {
+    display: flex;
+    flex-flow: row wrap; } }
 
 .res-menu .background-img {
   width: 100%;
@@ -255,6 +320,11 @@ button {
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
   background-color: #f6f6f6; }
+  @media screen and (min-width: 768px) {
+    .res-menu .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; } }
 .res-menu .order-confirm {
   display: flex;
   justify-content: center;
@@ -263,6 +333,12 @@ button {
     width: 188px;
     margin-top: 20px;
     margin-bottom: 53px; }
+  @media screen and (min-width: 768px) {
+    .res-menu .order-confirm {
+      width: 48%; } }
+  @media screen and (min-width: 992px) {
+    .res-menu .order-confirm {
+      width: 100%; } }
 .res-menu .footer {
   margin-top: 0; }
 

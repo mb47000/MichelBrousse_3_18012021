@@ -12,4 +12,12 @@
         width: 40px;
       }
     }
+
+    @include tablet {
+      width: 48%;
+    }
+
+    @include desktop {
+      width: 30%;
+    }
   }

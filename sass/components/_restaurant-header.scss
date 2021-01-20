@@ -4,5 +4,15 @@
     &__name {
       padding-left: 5px;
       margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @include tablet {
+      width: 100%;
+      @include flex-center;
+      margin-bottom: 25px;
     }
   }
