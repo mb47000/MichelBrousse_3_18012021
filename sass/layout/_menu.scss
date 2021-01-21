@@ -1,0 +1,23 @@
+.menu-layout {
+    margin-bottom: 36px;
+    .menu-layout__title {
+      padding-left: 5px;
+      position: relative;
+      margin-bottom: 23px;
+      &::before {
+        content: "";
+        border-bottom: 3px solid $color-tertiary;
+        position: absolute;
+        top: 25px;
+        width: 40px;
+      }
+    }
+
+    @include tablet {
+      width: 48%;
+    }
+
+    @include desktop {
+      width: 30%;
+    }
+  }
