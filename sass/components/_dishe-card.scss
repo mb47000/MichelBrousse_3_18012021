@@ -1,17 +1,15 @@
 .dishe-card {
-  
   @include card-shadow;
   margin-bottom: 14px;
   background-color: white;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
-  padding: 12px 15px 9px 11px;
 
   &__infos {
     text-overflow: ellipsis;
+    padding: 12px 0px 9px 11px;
     overflow: hidden;
-    margin-right: 10px;
     line-height: 1.4;
     &__name {
       font-size: 18px;
@@ -29,37 +27,82 @@
   &__price {
     display: flex;
     align-items: flex-end;
-    padding-right: 5px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: 0 5px 10px 0;
     font-weight: 600;
     font-size: 1.5rem;
+    transform: translateX(43px);
+    transition: 0.5s;
+  }
+
+  &__checkbox {
+    background-color: $color-tertiary;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.8s;
+    width: 63px;
+    transform: scaleX(0);
+    transform-origin: right center;
+    @include flex-center;
+
+    .fas {
+      color: white;   
+      font-size: 1.9rem;
+    }
+  }
+
+  &:hover {
+
+    .dishe-card__price {
+      transform: translateX(0px);
+    }
+
+    .dishe-card__checkbox {
+      transform: scaleX(1);
+      .fas {
+      animation: spin 400ms linear 1 running;
+      }
+    }
   }
 
   animation: entrance 0.8s backwards ease-in-out;
 
   @for $i from 1 through 4 {
     &--#{$i} {
-        animation-delay: 0.5s/4 * $i;
-     }
-  }
-}
-
-
-@keyframes entrance {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
+      animation-delay: 0.5s/4 * $i;
+    }
   }
 
-  50% {
-    opacity: 0.5;
+  @keyframes entrance {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    75% {
+      opacity: 0.75;
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 
-  75% {
-    opacity: 0.75;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

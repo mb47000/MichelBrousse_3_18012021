@@ -98,12 +98,11 @@ button {
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
-  padding: 12px 15px 9px 11px;
   animation: entrance 0.8s backwards ease-in-out; }
   .dishe-card__infos {
     text-overflow: ellipsis;
+    padding: 12px 0px 9px 11px;
     overflow: hidden;
-    margin-right: 10px;
     line-height: 1.4; }
     .dishe-card__infos__name {
       font-size: 18px;
@@ -117,9 +116,33 @@ button {
   .dishe-card__price {
     display: flex;
     align-items: flex-end;
-    padding-right: 5px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: 0 5px 10px 0;
     font-weight: 600;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    transform: translateX(43px);
+    transition: 0.5s; }
+  .dishe-card__checkbox {
+    background-color: #99E2d0;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.8s;
+    width: 63px;
+    transform: scaleX(0);
+    transform-origin: right center;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .dishe-card__checkbox .fas {
+      color: white;
+      font-size: 1.9rem; }
+  .dishe-card:hover .dishe-card__price {
+    transform: translateX(0px); }
+  .dishe-card:hover .dishe-card__checkbox {
+    transform: scaleX(1); }
+    .dishe-card:hover .dishe-card__checkbox .fas {
+      animation: spin 400ms linear 1 running; }
   .dishe-card--1 {
     animation-delay: 0.125s; }
   .dishe-card--2 {
@@ -128,7 +151,6 @@ button {
     animation-delay: 0.375s; }
   .dishe-card--4 {
     animation-delay: 0.5s; }
-
 @keyframes entrance {
   0% {
     opacity: 0;
@@ -140,6 +162,13 @@ button {
   100% {
     opacity: 1;
     transform: translateY(0px); } }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
 .fa-heart {
   cursor: pointer;
   position: relative;
