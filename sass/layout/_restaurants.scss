@@ -1,71 +1,74 @@
 .restaurants {
-    background-color: $color-section-background;
-    margin-top: 51px;
-    padding: 53px 20px 0 20px;
-  
-    .restaurants__title {
-      margin-bottom: 22px;
-      @include tablet {
-        text-align: center;
-      }
+  background-color: $color-section-background;
+  margin-top: 51px;
+  padding: 53px 20px 0 20px;
+
+  .restaurants__title {
+    margin-bottom: 22px;
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  .restaurants__card {
+    position: relative;
+    border-radius: 15px;
+    @include card-shadow;
+    margin-bottom: 16px;
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 175px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
     }
 
-    .restaurants__card {
-        position: relative;
-        border-radius: 15px;
-        @include card-shadow;
-        margin-bottom: 16px;
-        img {
-          object-fit: cover;
-          object-position: center;
-          width: 100%;
-          height: 175px;
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
-        }
-    
-        div {
-          display: flex;
-          justify-content: space-between;
-          padding: 11px 20px 14px 13px;
-          line-height: 1.4;
-        }
+    div {
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 20px 14px 13px;
+      line-height: 1.4;
+    }
 
-        @include tablet {
-          width: 48.5%;
-          margin-bottom: 25px;
-        }
+    @include tablet {
+      width: 48.5%;
+      margin-bottom: 25px;
+    }
 
-        @include desktop {
-          width: 31.5%
-        }
+    @include desktop {
+      width: 31.5%;
+    }
 
-        &--new {
-          &::before {
-            background-color: $color-tertiary;
-            color: $color-tertiary-bis;
-            content: "Nouveau";
-            font-weight: 600;
-            font-size: 1.4rem;
-            border-radius: 3px;
-            height: 30px;
-            width: 80px;
-            left: 72.5%;
-            top: 13px;
-            @include flex-center;
-            position: absolute;
-          }
-        }
+    &--new {
+      &::before {
+        background-color: $color-tertiary;
+        color: $color-tertiary-bis;
+        content: "Nouveau";
+        font-weight: 600;
+        font-size: 1.4rem;
+        border-radius: 3px;
+        height: 30px;
+        width: 80px;
+        left: 72.5%;
+        top: 13px;
+        @include flex-center;
+        position: absolute;
       }
-
-      @include tablet {
-        margin-top: 0;
-        padding-top: 20px;
-        border-top: 2px solid $color-component-background;
-        & > div {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-between;
-        }
-      }
+    }
   }
+
+  @include tablet {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 20px;
+    border-top: 2px solid $color-component-background;
+    & > div {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+  }
+
+  
+}
