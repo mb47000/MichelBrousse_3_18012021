@@ -74,12 +74,21 @@ button {
     @media screen and (min-width: 768px) {
       .restaurant-header__name {
         margin-bottom: 0; } }
+  .restaurant-header__like {
+    padding-right: 40px;
+    padding-top: 3px; }
+    .restaurant-header__like.fa-heart::after {
+      top: 3px; }
+    @media screen and (min-width: 768px) {
+      .restaurant-header__like {
+        margin-left: 25px; } }
   @media screen and (min-width: 768px) {
     .restaurant-header {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      align-items: unset;
       margin-bottom: 25px; } }
 
 .dishe-card {
@@ -110,6 +119,38 @@ button {
     padding-right: 5px;
     font-weight: 600;
     font-size: 1.5rem; }
+
+.fa-heart {
+  position: relative;
+  font-size: 2.2rem;
+  margin-top: 6px;
+  margin-right: 6px;
+  height: 22px;
+  width: 22px;
+  z-index: 1; }
+  .fa-heart::before {
+    opacity: 1;
+    transition: opacity 500ms 350ms ease-in-out; }
+  .fa-heart::after {
+    content: "\f004";
+    font-weight: 900;
+    position: absolute;
+    height: 22px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: red;
+    background: -webkit-linear-gradient(90deg, #FF79DA 40%, #9356DC 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; }
+  .fa-heart:hover::after {
+    opacity: 1; }
+  .fa-heart:hover::before {
+    opacity: 0; }
 
 .header {
   display: flex;
@@ -317,7 +358,8 @@ button {
 .home .footer__title {
   font-size: 1.8rem;
   font-weight: normal;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align: center; }
 @media screen and (min-width: 768px) {
   .home main {
     display: flex;

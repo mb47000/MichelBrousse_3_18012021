@@ -10,9 +10,23 @@
       }
     }
 
+    &__like {
+      padding-right: 40px;
+      padding-top: 3px;
+
+      &.fa-heart::after {
+        top: 3px;
+      }
+
+      @include tablet {
+        margin-left: 25px;
+      }
+    }
+
     @include tablet {
       width: 100%;
       @include flex-center;
+      align-items: unset;
       margin-bottom: 25px;
     }
   }
