@@ -142,7 +142,7 @@ button {
   .dishe-card:hover .dishe-card__checkbox {
     transform: scaleX(1); }
     .dishe-card:hover .dishe-card__checkbox .fas {
-      animation: spin 400ms linear 1 running; }
+      animation: spin 400ms linear 1; }
   .dishe-card--1 {
     animation-delay: 0.125s; }
   .dishe-card--2 {
@@ -276,7 +276,8 @@ button {
     padding-left: 7px; }
     @media screen and (min-width: 768px) {
       .search__text {
-        padding: 0 15px; } }
+        padding: 0 15px;
+        width: 100%; } }
   .search__input {
     width: 100%;
     display: flex;
@@ -374,6 +375,7 @@ button {
       .restaurants .restaurants__title {
         text-align: center; } }
   .restaurants .restaurants__card {
+    position: relative;
     border-radius: 15px;
     box-shadow: 0px 3px 10px -1px rgba(110, 110, 110, 0.3);
     margin-bottom: 16px; }
@@ -396,8 +398,24 @@ button {
     @media screen and (min-width: 992px) {
       .restaurants .restaurants__card {
         width: 31.5%; } }
+    .restaurants .restaurants__card--new::before {
+      background-color: #99E2d0;
+      color: #008766;
+      content: "Nouveau";
+      font-weight: 600;
+      font-size: 1.4rem;
+      border-radius: 3px;
+      height: 30px;
+      width: 80px;
+      left: 72.5%;
+      top: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute; }
   @media screen and (min-width: 768px) {
     .restaurants {
+      width: 100%;
       margin-top: 0;
       padding-top: 20px;
       border-top: 2px solid #eaeaea; }
