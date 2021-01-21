@@ -35,6 +35,8 @@ h3 {
   font-size: 1.8rem; }
 
 button {
+  position: relative;
+  z-index: 1;
   color: white;
   cursor: pointer;
   border: none;
@@ -47,6 +49,21 @@ button {
   box-shadow: 0px 4px 7px 0px rgba(110, 110, 110, 0.4); }
   button:focus {
     outline: none; }
+  button:hover::after {
+    opacity: 1; }
+  button::after {
+    content: "";
+    position: absolute;
+    border-radius: 25px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(175deg, #ff93e1 0%, #a16be0 95%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 250ms;
+    box-shadow: 0px 4px 15px 0px rgba(110, 110, 110, 0.4); }
 
 .restaurant-header {
   display: flex;
@@ -57,12 +74,21 @@ button {
     @media screen and (min-width: 768px) {
       .restaurant-header__name {
         margin-bottom: 0; } }
+  .restaurant-header__like {
+    padding-right: 40px;
+    padding-top: 3px; }
+    .restaurant-header__like.fa-heart::after {
+      top: 3px; }
+    @media screen and (min-width: 768px) {
+      .restaurant-header__like {
+        margin-left: 25px; } }
   @media screen and (min-width: 768px) {
     .restaurant-header {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      align-items: unset;
       margin-bottom: 25px; } }
 
 .dishe-card {
@@ -72,11 +98,11 @@ button {
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
-  padding: 12px 15px 9px 11px; }
+  animation: entrance 0.8s backwards ease-in-out; }
   .dishe-card__infos {
     text-overflow: ellipsis;
+    padding: 12px 0px 9px 11px;
     overflow: hidden;
-    margin-right: 10px;
     line-height: 1.4; }
     .dishe-card__infos__name {
       font-size: 18px;
@@ -90,10 +116,135 @@ button {
   .dishe-card__price {
     display: flex;
     align-items: flex-end;
-    padding-right: 5px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: 0 5px 10px 0;
     font-weight: 600;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    transform: translateX(43px);
+    transition: 0.5s; }
+  .dishe-card__checkbox {
+    background-color: #99E2d0;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.8s;
+    width: 63px;
+    transform: scaleX(0);
+    transform-origin: right center;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .dishe-card__checkbox .fas {
+      color: white;
+      font-size: 1.9rem; }
+  .dishe-card:hover .dishe-card__price {
+    transform: translateX(0px); }
+  .dishe-card:hover .dishe-card__checkbox {
+    transform: scaleX(1); }
+    .dishe-card:hover .dishe-card__checkbox .fas {
+      animation: spin 400ms linear 1 running; }
+  .dishe-card--1 {
+    animation-delay: 0.125s; }
+  .dishe-card--2 {
+    animation-delay: 0.25s; }
+  .dishe-card--3 {
+    animation-delay: 0.375s; }
+  .dishe-card--4 {
+    animation-delay: 0.5s; }
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
+.fa-heart {
+  cursor: pointer;
+  position: relative;
+  font-size: 2.2rem;
+  margin-top: 6px;
+  margin-right: 6px;
+  height: 22px;
+  width: 22px;
+  z-index: 1; }
+  .fa-heart::before {
+    opacity: 1;
+    transition: opacity 500ms 350ms ease-in-out; }
+  .fa-heart::after {
+    content: "\f004";
+    font-weight: 900;
+    position: absolute;
+    height: 22px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: red;
+    background: -webkit-linear-gradient(90deg, #FF79DA 40%, #9356DC 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; }
+  .fa-heart:hover::after {
+    opacity: 1; }
+  .fa-heart:hover::before {
+    opacity: 0; }
 
+.loader::before {
+  content: "";
+  top: 0;
+  position: fixed;
+  background: #F5EDFF;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  animation: loader 2s 3s ease-in-out forwards; }
+.loader::after {
+  content: "";
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  border-radius: 50%;
+  position: fixed;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #9356DC;
+  background-image: -webkit-linear-gradient(90deg, #FF79DA 10%, #9356DC 90%);
+  z-index: 11;
+  height: 100px;
+  width: 100px;
+  animation: spinner 4s linear forwards; }
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg) scale(1); }
+  25% {
+    transform: rotate(180deg) scale(1.2); }
+  50% {
+    transform: rotate(360deg) scale(1.4); }
+  75% {
+    transform: rotate(540deg) scale(1.2);
+    opacity: 1; }
+  100% {
+    transform: rotate(720deg) scale(1);
+    opacity: 0; } }
+@keyframes loader {
+  from {
+    transform: scaleY(1); }
+  to {
+    opacity: 0;
+    transform: scaleY(0); } }
 .header {
   display: flex;
   justify-content: center;
@@ -300,7 +451,8 @@ button {
 .home .footer__title {
   font-size: 1.8rem;
   font-weight: normal;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align: center; }
 @media screen and (min-width: 768px) {
   .home main {
     display: flex;
