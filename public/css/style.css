@@ -152,6 +152,49 @@ button {
   .fa-heart:hover::before {
     opacity: 0; }
 
+.loader::before {
+  content: "";
+  top: 0;
+  position: fixed;
+  background: #F5EDFF;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  animation: loader 2s 3s ease-in-out forwards; }
+.loader::after {
+  content: "";
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  border-radius: 50%;
+  position: fixed;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #9356DC;
+  background-image: -webkit-linear-gradient(90deg, #FF79DA 10%, #9356DC 90%);
+  z-index: 11;
+  height: 100px;
+  width: 100px;
+  animation: spinner 4s linear forwards; }
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(180deg) scale(1.2); }
+  50% {
+    transform: rotate(360deg) scale(1.4); }
+  75% {
+    transform: rotate(540deg) scale(1.2);
+    opacity: 1; }
+  100% {
+    transform: rotate(720deg) scale(1);
+    opacity: 0; } }
+@keyframes loader {
+  from {
+    transform: scaleY(1); }
+  to {
+    opacity: 0;
+    transform: scaleY(0); } }
 .header {
   display: flex;
   justify-content: center;
