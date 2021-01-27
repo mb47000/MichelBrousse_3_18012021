@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
   
     &__title {
       @include tablet {
@@ -11,6 +12,9 @@
     }
 
     &__card {
+      cursor: pointer;
+      z-index: 1;
+      position: relative;
       display: flex;
       align-items: center;
       background-color: $color-section-background;
@@ -42,6 +46,29 @@
         font-weight: 600;
       }
   
+      &::after {
+        content: "";
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $color-active-background;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+        border-radius: 18px;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        i {
+          color: $color-primary;
+        }
+      }
+
       &--active {
         background-color: $color-active-background;
         i {
