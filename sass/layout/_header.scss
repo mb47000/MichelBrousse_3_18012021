@@ -1,14 +1,14 @@
 .header {
-    @include flex-center;
-    padding: 22px 0 12px 0;
+  @include flex-center;
+  padding: 22px 0 12px 0;
 
-    &__logo {
-        height: 28.5px;
-    }
+  &__logo {
+    height: 28.5px;
+  }
 
-    &__nav {
-        position: absolute;
-        left: 23px;
-        font-size: 1.8rem;
-    }
+  &__nav {
+    position: absolute;
+    left: 23px;
+    font-size: 1.8rem;
+  }
 }

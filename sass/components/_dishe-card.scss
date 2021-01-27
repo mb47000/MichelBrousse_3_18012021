@@ -4,13 +4,20 @@
   background-color: white;
   border-radius: 15px;
   display: flex;
-  justify-content: space-between;
+  overflow: hidden;
 
   &__infos {
     text-overflow: ellipsis;
     padding: 12px 0px 9px 11px;
     overflow: hidden;
     line-height: 1.4;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    &__container {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     &__name {
       font-size: 18px;
       margin-bottom: 5px;
@@ -22,48 +29,41 @@
       white-space: nowrap;
       display: inline;
     }
-  }
 
-  &__price {
-    display: flex;
-    align-items: flex-end;
-    flex-grow: 1;
-    justify-content: flex-end;
-    padding: 0 5px 10px 0;
-    font-weight: 600;
-    font-size: 1.5rem;
-    transform: translateX(43px);
-    transition: 0.5s;
+    &__price {
+      padding: 0 22px 0 3px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
   }
 
   &__checkbox {
     background-color: $color-tertiary;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
-    transition: 0.8s;
-    width: 63px;
-    transform: scaleX(0);
+    transition: 400ms linear;
+    width: 65px;
+    // transform: translateX(65px);
+    margin-right: -65px;
     transform-origin: right center;
     @include flex-center;
 
     .fas {
-      color: white;   
+      color: white;
       font-size: 1.9rem;
       transition: 400ms linear;
     }
   }
 
   &:hover {
-
-    .dishe-card__price {
-      transform: translateX(0px);
-    }
-
     .dishe-card__checkbox {
-      transform: scaleX(1);
+      margin-right: 0px;
       .fas {
-      // animation: spin 400ms linear 1;
-      transform: rotate(360deg);
+        // animation: spin 400ms linear 1;
+        transform: rotate(360deg);
       }
     }
   }
@@ -75,24 +75,103 @@
       animation-delay: 0.5s/4 * $i;
     }
   }
+}
 
-  @keyframes entrance {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.dishe-card-new {
+  @include card-shadow;
+  margin-bottom: 14px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  overflow: hidden;
+
+  &__infos {
+    text-overflow: ellipsis;
+    padding: 12px 0px 9px 11px;
+    overflow: hidden;
+    line-height: 1.4;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    &__container {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &__name {
+      font-size: 18px;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      display: inline;
+    }
+    &__details {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      display: inline;
     }
 
-    50% {
-      opacity: 0.5;
+    &__price {
+      padding: 0 22px 0 3px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
+  }
 
-    75% {
-      opacity: 0.75;
+  &__checkbox {
+    background-color: $color-tertiary;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 1s;
+    width: 65px;
+    // transform: translateX(65px);
+    margin-right: -65px;
+    transform-origin: right center;
+    @include flex-center;
+
+    .fas {
+      color: white;
+      font-size: 1.9rem;
+      transition: 700ms linear;
     }
+  }
 
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
+  &:hover {
+    .dishe-card-new__checkbox {
+      margin-right: 0px;
+      .fas {
+        // animation: spin 400ms linear 1;
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  animation: entrance 0.8s backwards ease-in-out;
+
+  @for $i from 1 through 4 {
+    &--#{$i} {
+      animation-delay: 0.5s/4 * $i;
     }
   }
 }

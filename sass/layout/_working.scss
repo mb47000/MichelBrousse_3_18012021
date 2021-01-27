@@ -1,83 +1,82 @@
 .working {
-    padding: 47px 20px 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  padding: 47px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-  
-    &__title {
-      @include tablet {
-        text-align: center;
-      }
-    }
-
-    &__card {
-      cursor: pointer;
-      z-index: 1;
-      position: relative;
-      display: flex;
-      align-items: center;
-      background-color: $color-section-background;
-      height: 72px;
-      width: calc(100% - 11.5px);
-      margin-bottom: 2.3rem;
-      border-radius: 18px;
-      @include card-shadow;
-  
-      span {
-        @include flex-center;
-        font-size: 1.4rem;
-        width: 23px;
-        height: 23px;
-        border-radius: 50%;
-        background-color: $color-primary;
-        color: white;
-        margin-left: -11.5px;
-      }
-  
-      i {
-        font-size: 1.8rem;
-        color: $color-icon-primary;
-        margin: 0 20px 0 20px;
-        padding-left: 11.5px;
-      }
-  
-      p {
-        font-weight: 600;
-      }
-  
-      &::after {
-        content: "";
-        position: absolute;
-        top:0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: $color-active-background;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity .4s ease-in-out;
-        border-radius: 18px;
-      }
-
-      &:hover {
-        &::after {
-          opacity: 1;
-        }
-        i {
-          color: $color-primary;
-        }
-      }
-
-      &--active {
-        background-color: $color-active-background;
-        i {
-          color: $color-primary;
-        }
-      }
-    }
-
+  &__title {
     @include tablet {
-      width: 50%;
+      text-align: center;
     }
   }
+
+  &__card {
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $color-section-background;
+    height: 72px;
+    width: calc(100% - 11.5px);
+    margin-bottom: 2.3rem;
+    border-radius: 18px;
+    @include card-shadow;
+
+    span {
+      @include flex-center;
+      font-size: 1.4rem;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background-color: $color-primary;
+      color: white;
+      margin-left: -11.5px;
+    }
+
+    i {
+      font-size: 1.8rem;
+      color: $color-icon-primary;
+      margin: 0 20px 0 20px;
+      padding-left: 11.5px;
+    }
+
+    p {
+      font-weight: 600;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $color-active-background;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      border-radius: 18px;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+      i {
+        color: $color-primary;
+      }
+    }
+
+    &--active {
+      background-color: $color-active-background;
+      i {
+        color: $color-primary;
+      }
+    }
+  }
+
+  @include tablet {
+    width: 50%;
+  }
+}
