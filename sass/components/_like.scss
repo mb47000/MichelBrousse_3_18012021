@@ -8,22 +8,25 @@
   width: 22px;
   z-index: 1;
 
-    &::before {
-        opacity: 1;
-        transition: opacity 500ms 350ms ease-in-out;
-    }
+  &::before {
+    opacity: 1;
+    transition: opacity 500ms 350ms ease-in-out;
+  }
 
   &::after {
     content: "\f004";
     font-weight: 900;
     position: absolute;
     height: 22px;
-    top:0;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    color: red;
-    background: -webkit-linear-gradient(90deg, $color-secondary 40%, $color-primary 90%);
+    background: -webkit-linear-gradient(
+      90deg,
+      $color-secondary 40%,
+      $color-primary 90%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: -1;
@@ -36,7 +39,7 @@
       opacity: 1;
     }
     &::before {
-        opacity: 0;
+      opacity: 0;
     }
   }
 }
