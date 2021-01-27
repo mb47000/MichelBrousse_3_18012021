@@ -1,32 +1,32 @@
 .restaurant-header {
-    display: flex;
-    justify-content: space-between;
-    &__name {
-      padding-left: 5px;
-      margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  &__name {
+    padding-left: 5px;
+    margin-bottom: 30px;
 
-      @include tablet {
-        margin-bottom: 0;
-      }
+    @include tablet {
+      margin-bottom: 0;
     }
+  }
 
-    &__like {
-      padding-right: 40px;
-      padding-top: 3px;
+  &__like {
+    padding-right: 40px;
+    padding-top: 3px;
 
-      &.fa-heart::after {
-        top: 3px;
-      }
-
-      @include tablet {
-        margin-left: 25px;
-      }
+    &.fa-heart::after {
+      top: 3px;
     }
 
     @include tablet {
-      width: 100%;
-      @include flex-center;
-      align-items: unset;
-      margin-bottom: 25px;
+      margin-left: 25px;
     }
   }
+
+  @include tablet {
+    width: 100%;
+    @include flex-center;
+    align-items: unset;
+    margin-bottom: 25px;
+  }
+}
