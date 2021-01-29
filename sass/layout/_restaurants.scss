@@ -3,14 +3,14 @@
   margin-top: 51px;
   padding: 53px 20px 0 20px;
 
-  .restaurants__title {
+  &__title {
     margin-bottom: 22px;
     @include tablet {
       text-align: center;
     }
   }
 
-  .restaurants__card {
+  &__card {
     position: relative;
     border-radius: 15px;
     @include card-shadow;

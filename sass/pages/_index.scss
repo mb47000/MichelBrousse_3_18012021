@@ -16,7 +16,6 @@
       font-size: 1.8rem;
       font-weight: normal;
       margin-bottom: 0;
-      text-align: center;
     }
   }
 
@@ -24,6 +23,11 @@
     main {
       display: flex;
       flex-flow: row wrap;
+    }
+    .footer {
+      &__title {
+       text-align: center;
+      }
     }
   }
 }
